@@ -10,5 +10,5 @@ terraform {
 provider "local" {}
 
 module "local_file" {
-  source = "./modules/local_file"
+  source = "./modules/local-file"
 }
