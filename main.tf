@@ -9,7 +9,6 @@ terraform {
 
 provider "local" {}
 
-resource "local_file" "welcome" {
-  filename = "welcome.txt"
-  content  = "Hello Saranya. Learning Terraform and DevOps."
+module "local-file" {
+  source = "./modules/local-file"
 }
