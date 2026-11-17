@@ -1,24 +1,35 @@
 name: Terraform CI
+
 on:
   push:
     branches:
-      - feature/** 
+      - feature/**
+
 jobs:
   hello:
     runs-on: ubuntu-latest
+
     steps:
       - name: print hello
         run: echo "Terraform pipeline started"
+
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
+
       - name: verify Terraform version
         run: terraform version
+
       - name: Terraform Format Check
         run: terraform fmt -check
+
+      - name: Terraform Init
+        run: terraform init
+
       - name: Terraform Validate
         run: terraform validate
+
       - name: Terraform Plan
         run: terraform plan
-  
