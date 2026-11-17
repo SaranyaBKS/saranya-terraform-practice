@@ -9,4 +9,10 @@ jobs:
     steps:
       - name: print hello
         run: echo "Terraform pipeline started"
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+      - name: verify Terraform version
+        run: terraform version
        
