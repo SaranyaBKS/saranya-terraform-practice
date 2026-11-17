@@ -2,4 +2,11 @@ name: Terraform CI
 on:
   push:
     branches:
-      - feature/*
+      - feature/** 
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print hello
+        run: echo "Terraform pipeline started"
+       
